@@ -15,12 +15,15 @@ CreateThread(function()
 	Data = result
 end)
 
---[[ How to save info into your database!!!!!!!
+
+
 RegisterServerEvent('EventNameHere')
 AddEventHandler('EventNameHere', function(data)
+    local new_obj = {["steamid"] = GetSteamID()} -- you can enter more data inside the object of course
+    Data[#Data + 1] = new_obj
     SaveResourceFile(GetCurrentResourceName(), "./database.json", json.encode(Data), -1)
 end)
-]]
+
 
 
 -- functions 
